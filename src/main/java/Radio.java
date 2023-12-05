@@ -39,14 +39,14 @@ public class Radio {
         if (currentLevelVolume <100){
             currentLevelVolume = currentLevelVolume+1;
         }
-        if (currentLevelVolume>100) return;
+        if (currentLevelVolume==100) return;
 
     }
     public void decreaseVolume(){
         if (currentLevelVolume > 0){
             currentLevelVolume = currentLevelVolume-1;
         }
-        if (currentLevelVolume<0) return;
+        if (currentLevelVolume==0) return;
     }
 
 
