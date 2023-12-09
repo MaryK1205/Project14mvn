@@ -3,37 +3,67 @@ import org.junit.jupiter.api.Test;
 
 public class RadioTest {
     @Test
-    public void shouldSetNumberCurrentRadioStation() {
-        Radio rad = new Radio();
-        rad.setNumberCurrentRadioStation(9);
-        int expected = 9;
-        int actual = rad.getNumberCurrentRadioStation();
+    public void shouldSetNumberRadioStation() {
+        Radio rad = new Radio(15);
+        Assertions.assertEquals(15, rad.getNumberRadioStation());
+    }
 
+    @Test
+    public void shouldNotSetNumberRadioStation1() {
+        Radio rad = new Radio();
+        Assertions.assertEquals(10, rad.getNumberRadioStation());
+    }
+
+    @Test
+    public void shouldSetNumberCurrentRadioStationNotSetNumberRS() {
+        Radio rad = new Radio();
+        rad.setNumberCurrentRadioStation(7);
+        int expected = 7;
+        int actual = rad.getNumberCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldNotSetNumberCurrentRadioStation1() {
+    public void shouldNotSetNumberCurrentRadioStationNotSetNumberRS1() {
+        Radio rad = new Radio();
+        rad.setNumberCurrentRadioStation(11);
+        int expected = 10;
+        int actual = rad.getNumberCurrentRadioStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldNotSetNumberCurrentRadioStationNotSetNumberRS2() {
         Radio rad = new Radio();
         rad.setNumberCurrentRadioStation(-1);
-        int expected = 0;
+        int expected = 10;
         int actual = rad.getNumberCurrentRadioStation();
+        Assertions.assertEquals(expected, actual);
+    }
 
+
+    @Test
+    public void shouldSetNumberCurrentRadioStationSetNumberRS() {
+        Radio rad = new Radio(15);
+        rad.setNumberCurrentRadioStation(11);
+        int expected = 11;
+        int actual = rad.getNumberCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldNotSetNumberCurrentRadioStation2() {
-        Radio rad = new Radio();
-        rad.setNumberCurrentRadioStation(12);
-        int expected = 0;
+
+    public void shouldNotSetNumberCurrentRadioStationSetNumberRS() {
+        Radio rad = new Radio(15);
+        rad.setNumberCurrentRadioStation(17);
+        int expected = 15;
         int actual = rad.getNumberCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldSetNextRadioStashion() {
-        Radio rad = new Radio();
+        Radio rad = new Radio(15);
         rad.setNumberCurrentRadioStation(5);
         rad.nextNumberRadioStation();
         int expected = 6;
@@ -42,7 +72,17 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldNotSetNextRadioStashion() {
+    public void shouldNotSetNextRadioStashionSetNumberRS() {
+        Radio rad = new Radio(15);
+        rad.setNumberCurrentRadioStation(14);
+        rad.nextNumberRadioStation();
+        int expected = 0;
+        int actual = rad.getNumberCurrentRadioStation();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void shouldNotSetNextRadioStashionNotSetNumberRS() {
         Radio rad = new Radio();
         rad.setNumberCurrentRadioStation(9);
         rad.nextNumberRadioStation();
