@@ -27,7 +27,7 @@ public class RadioTest {
     public void shouldNotSetNumberCurrentRadioStationNotSetNumberRS1() {
         Radio rad = new Radio();
         rad.setNumberCurrentRadioStation(11);
-        int expected = 10;
+        int expected = 9;
         int actual = rad.getNumberCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
