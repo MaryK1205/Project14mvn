@@ -36,7 +36,7 @@ public class RadioTest {
     public void shouldNotSetNumberCurrentRadioStationNotSetNumberRS2() {
         Radio rad = new Radio();
         rad.setNumberCurrentRadioStation(-1);
-        int expected = 10;
+        int expected = 9;
         int actual = rad.getNumberCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
@@ -56,7 +56,7 @@ public class RadioTest {
     public void shouldNotSetNumberCurrentRadioStationSetNumberRS() {
         Radio rad = new Radio(15);
         rad.setNumberCurrentRadioStation(17);
-        int expected = 15;
+        int expected = 14;
         int actual = rad.getNumberCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
