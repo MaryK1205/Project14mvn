@@ -6,11 +6,11 @@ public class Radio {
 
     public Radio(int numberRadioStation) {
         this.numberRadioStation = numberRadioStation;
-        this.numberCurrentRadioStation = numberRadioStation;
+        this.numberCurrentRadioStation = numberRadioStation-1;
     }
 
     public Radio() {
-        this.numberRadioStation = numberRadioStation;
+        this.numberRadioStation = numberRadioStation-1;
 
     }
 
