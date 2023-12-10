@@ -1,6 +1,6 @@
 public class Radio {
     private int numberRadioStation = 10;
-    private int numberCurrentRadioStation = numberRadioStation;
+    private int numberCurrentRadioStation = numberRadioStation-1;
     private int currentLevelVolume;
 
 
@@ -10,7 +10,7 @@ public class Radio {
     }
 
     public Radio() {
-        this.numberRadioStation = numberRadioStation-1;
+        this.numberRadioStation = numberRadioStation;
 
     }
 
@@ -67,7 +67,9 @@ public class Radio {
         if (currentLevelVolume < 100) {
             currentLevelVolume = currentLevelVolume + 1;
         }
-        if (currentLevelVolume == 100) return;
+        if (currentLevelVolume == 100) {
+            return;
+        }
 
     }
 
